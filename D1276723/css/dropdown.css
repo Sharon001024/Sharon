@@ -1,0 +1,95 @@
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline-style: none;
+    box-shadow: none;
+}
+
+nav {
+    min-height: 60px;
+}
+
+ul li a {
+    border-radius: 10px;
+    color: #000000 !important;
+}
+
+ul li a:hover {
+    border-radius: 10px;
+    background-color: #6DD0CD !important;
+    transition: all 0.5s;
+}
+
+.nav-link {
+    padding: 14px;
+}
+
+.navbar-nav li ul.dropdown-menu {
+    display: none;
+}
+
+.navbar-nav li:hover>ul.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 50%;
+    left: 100%;
+}
+
+
+
+
+
+
+.page-footer {
+    position: fixed;
+    right: 0;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.page-footer a {
+    display: flex;
+    margin-left: 4px;
+}
+
+.demo {
+    opacity: 1;
+    text-align: right;
+}
+
+.demo:hover {
+    opacity: 1;
+    background-color: red;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.myButton {
+    border-radius: 9px;
+    display: inline-block;
+    cursor: pointer;
+    color: #000000;
+    font-family:Microsoft JhengHei;
+    padding: 5px 12px;
+    text-decoration: none;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+.carousel-indicators [data-bs-target] {
+    width: 60px;
+    height: 6px;
+    border: none;
+    border-radius: 50px;
+    background: #898d91;
+}
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiffany & Co. | acccount</title>
+  <style>
+    :root {
+      --tiffany-blue: #30cfcf;
+      --tiffany-blue-dark: #26b3b3;
+      --bg-light: #e0f7f4;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica", sans-serif;
+      background-color: var(--bg-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .logo {
+      width: 299px;
+      height: 169px;
+      margin-bottom: 16px;
+    }
+
+    .login-container h2 {
+      color: var(--tiffany-blue);
+      margin-bottom: 24px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      margin: 8px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .remember-me input {
+      margin-right: 6px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--tiffany-blue);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: var(--tiffany-blue-dark);
+    }
+
+    .options {
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .options a {
+      color: var(--tiffany-blue);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 500px) {
+      .login-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <!-- Logo 圖片，請替換成自己的圖片連結 -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ624-MqXvsvjzCF3B0iYpKXUDNAhBco0BPng&s" alt="Logo" class="logo">
+    
+    <h2>Member login</h2>
+    <form>
+      <input type="text" placeholder="account" id="username" required>
+      <input type="password" placeholder="password" required>
+
+      <div class="remember-me">
+        <input type="checkbox" id="remember">
+        <label for="remember">remember account</label>
+      </div>
+
+      <button type="submit">login</button>
+      <div class="options">
+        <a href="#">register</a> | <a href="#">forget the password?</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // 簡單記住帳號功能（使用 localStorage）
+    const usernameInput = document.getElementById('username');
+    const rememberCheckbox = document.getElementById('remember');
+
+    // 頁面載入時，讀取儲存的帳號
+    window.onload = () => {
+      const savedUsername = localStorage.getItem('savedUsername');
+      if (savedUsername) {
+        usernameInput.value = savedUsername;
+        rememberCheckbox.checked = true;
+      }
+    };
+
+    // 提交表單時儲存或清除帳號
+    document.querySelector("form").addEventListener("submit", (e) => {
+      e.preventDefault(); // 防止真的送出
+      if (rememberCheckbox.checked) {
+        localStorage.setItem("savedUsername", usernameInput.value);
+      } else {
+        localStorage.removeItem("savedUsername");
+      }
+      alert("登入成功（範例）！");
+    });
+  </script>
+</body>
+</html> 
